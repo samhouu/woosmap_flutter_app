@@ -1,59 +1,42 @@
+import 'dart:convert';
 import 'package:flutter/material.dart';
 import 'package:woosmap_flutter/woosmap_flutter.dart';
 
 class WoosMapPage extends StatelessWidget {
-  
   const WoosMapPage({super.key});
 
-  
   @override
   Widget build(BuildContext context) {
-    return WoosmapMapViewWidget.create(
+    
+    return WoosmapMapViewWidget(
       wooskey: "woos-64c7cde7-c2c7-3be1-a924-a363f183fb38",
+      widget: true,
+      indoorRendererConfiguration: const {"centerMap": true, "defaultFloor": 0},
+      indoorWidgetConfiguration: const {
+        "units": "metric",
+        "ui": {
+          "primaryColor": "#318276",
+          "secondaryColor": "#004651",
+          "tertiaryColor": "#E20813"
+        },
+      },
       onRef: (p0) async {
-        _controller = p0;
+        //_controller = p0;
       },
-      mapOptions: MapOptions(
-          center: LatLng.fromJson({"lat": 15.50297095, "lng": 120.57933925}),
-          zoom: 10),
-      click: (message) {
-        debugPrint("idle");
+      indoor_venue_loaded: (message) {
+        debugPrint(jsonEncode(message));
       },
-      bounds_changed: () {
-        debugPrint("idle");
+      indoor_feature_selected: (message) {
+        debugPrint(jsonEncode(message));
       },
-      center_changed: () {
-        debugPrint("idle");
+      indoor_level_changed: (message) {
+        debugPrint("$message");
       },
-      dblclick: (m) {
-        debugPrint("idle");
+      indoor_user_location: (message) {
+        debugPrint(jsonEncode(message));
       },
-      drag: () {
-        debugPrint("idle");
-      },
-      dragend: () {
-        debugPrint("idle");
-      },
-      dragstart: () {
-        debugPrint("idle");
-      },
-      idle: () {
-        debugPrint("idle");
-      },
-      mousemove: (x) {
-        debugPrint("idle");
-      },
-      mouseout: (x) {
-        debugPrint("idle");
-      },
-      mouseover: (x) {
-        debugPrint("idle");
-      },
-      rightclick: (x) {
-        debugPrint("idle");
-      },
-      zoom_changed: () {
-        debugPrint("idle");
+      indoor_highlight_step: (message) {
+        debugPrint(jsonEncode(message));
       },
     );
   }

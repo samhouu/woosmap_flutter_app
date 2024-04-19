@@ -48,52 +48,52 @@ class _HomePageState extends State<HomePage> {
           ],
         ),
       ),
-      floatingActionButton: Visibility(
-        visible: currentIndex != 1 || showFloatingActionButton,
-        child: FloatingActionButton(
-          onPressed: () {
-            // Add your onPressed logic here
-          }, // Use my_location icon for centering on location
-          backgroundColor: HexColor('2B2E35'),
-          foregroundColor: Colors.white,
-          child: const Icon(Icons.my_location), // Example color
-        ),
-      ),
-      bottomNavigationBar: Container(
-        color: HexColor('1D1F24'),
-        child: Padding(
-          padding: const EdgeInsets.all(8.0),
-          child: BottomNavigationBar(
-            backgroundColor: HexColor('1D1F24'),
-            selectedItemColor: Colors.white,
-            unselectedItemColor: Colors.grey.shade800,
-            showUnselectedLabels: true,
-            type: BottomNavigationBarType.fixed,
-            elevation: 0.0,
-            items: const [
-              BottomNavigationBarItem(
-                label: 'Map',
-                icon: Icon(Icons.map_rounded),
-              ),
-              BottomNavigationBarItem(
-                label: 'Way',
-                icon: Icon(Icons.assistant_navigation),
-              ),
-              BottomNavigationBarItem(
-                label: 'Recent',
-                icon: Icon(Icons.history),
-              ),
-            ],
-            currentIndex: currentIndex,
-            onTap: (int index) {
-              setState(() {
-                currentIndex = index;
-                showFloatingActionButton = index != 1;
-              });
-            },
-          ),
-        ),
-      ),
+      // floatingActionButton: Visibility(
+      //   visible: currentIndex != 1 || showFloatingActionButton,
+      //   child: FloatingActionButton(
+      //     onPressed: () {
+      //       // Add your onPressed logic here
+      //     }, // Use my_location icon for centering on location
+      //     backgroundColor: HexColor('2B2E35'),
+      //     foregroundColor: Colors.white,
+      //     child: const Icon(Icons.my_location), // Example color
+      //   ),
+      // ),
+      // bottomNavigationBar: Container(
+      //   color: HexColor('1D1F24'),
+      //   child: Padding(
+      //     padding: const EdgeInsets.all(8.0),
+      //     child: BottomNavigationBar(
+      //       backgroundColor: HexColor('1D1F24'),
+      //       selectedItemColor: Colors.white,
+      //       unselectedItemColor: Colors.grey.shade800,
+      //       showUnselectedLabels: true,
+      //       type: BottomNavigationBarType.fixed,
+      //       elevation: 0.0,
+      //       items: const [
+      //         BottomNavigationBarItem(
+      //           label: 'Map',
+      //           icon: Icon(Icons.map_rounded),
+      //         ),
+      //         BottomNavigationBarItem(
+      //           label: 'Way',
+      //           icon: Icon(Icons.assistant_navigation),
+      //         ),
+      //         BottomNavigationBarItem(
+      //           label: 'Recent',
+      //           icon: Icon(Icons.history),
+      //         ),
+      //       ],
+      //       currentIndex: currentIndex,
+      //       onTap: (int index) {
+      //         setState(() {
+      //           currentIndex = index;
+      //           showFloatingActionButton = index != 1;
+      //         });
+      //       },
+      //     ),
+      //   ),
+      // ),
     );
   }
 }
